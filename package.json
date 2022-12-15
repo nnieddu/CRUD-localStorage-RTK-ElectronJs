@@ -1,5 +1,5 @@
 {
-  "name": "crud",
+  "name": "rud",
   "version": "1.0.0",
   "description": "CRUD Application",
   "author": "nnieddu",
@@ -9,17 +9,21 @@
   "config": {
     "forge": {
       "packagerConfig": {
-				"icon": "./build/desktopIcon.png",
+				"name": "Crud",
+				"asar": true,
+				"icon": "build/icons/app",
         "ignore": [
-          "^\\/public$",
-          "^\\/src$",
+          "^\\/public",
+          "^\\/src",
           "^\\/node_modules/(?!electron-squirrel-startup)",
-          "^\\/[.].+"
+					"README.md"
         ]
       },
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel"
+          "name": "@electron-forge/maker-squirrel",
+					"iconUrl": "build/icons/app/desktopIcon.ico",
+					"setupIcon": "build/icons/app/desktopIcon.ico"
         }
       ]
     }
@@ -56,7 +60,8 @@
     "elec-dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "elecstart": "electron-forge start",
     "package": "electron-forge package",
-    "make": "npm run sass && npm run prefix && react-scripts build && electron-forge make"
+    "make": "npm run sass && npm run prefix && react-scripts build && electron-forge make",
+    "noBuildmake": "electron-forge make"
   },
   "eslintConfig": {
     "extends": [
