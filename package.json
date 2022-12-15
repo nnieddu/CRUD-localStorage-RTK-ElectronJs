@@ -8,10 +8,15 @@
   "homepage": "./",
   "config": {
     "forge": {
+      "packagerConfig": {
+        "ignore": [
+          "^\\/public$",
+          "^\\/src$",
+          "^\\/node_modules/(?!electron-squirrel-startup)",
+          "^\\/[.].+"
+        ]
+      },
       "makers": [
-        {
-          "name": "@electron-forge/maker-zip"
-        },
         {
           "name": "@electron-forge/maker-squirrel"
         }
