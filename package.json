@@ -9,6 +9,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
+				"icon": "./build/desktopIcon.png",
         "ignore": [
           "^\\/public$",
           "^\\/src$",
@@ -55,7 +56,7 @@
     "elec-dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "elecstart": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "npm run sass && npm run prefix && react-scripts build && electron-forge make"
   },
   "eslintConfig": {
     "extends": [
