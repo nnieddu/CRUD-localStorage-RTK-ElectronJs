@@ -42,6 +42,7 @@ input[type=submit] {
   border-radius: 5px;
   margin-top: 4px;
   background: #1a8917;
+  width: auto;
   color: rgb(255, 255, 255);
   margin-left: auto;
   letter-spacing: 1px;
