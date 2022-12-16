@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addPost } from "../app/features/posts/postSlice";
+import { addPost, setEditToggle } from "../app/features/posts/postSlice";
 
 const PostForm = () => {
   const [title, setTitle] = useState("");
@@ -30,7 +30,8 @@ const PostForm = () => {
 			dispatch(addPost(data));
       setTitle("");
       setContent("");
-			changeTxtAreaSize(true)
+			changeTxtAreaSize(true) // reput normal size area
+			dispatch(setEditToggle(false));
     }
   };
 

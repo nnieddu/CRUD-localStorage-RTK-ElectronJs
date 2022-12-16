@@ -11,6 +11,7 @@ posts = JSON.parse(localStorage.getItem("posts"));
 
 const initialState = {
   posts,
+	editToogle: false,
 };
 
 export const postSlice = createSlice({
@@ -36,9 +37,12 @@ export const postSlice = createSlice({
       state.posts[post.payload.id].likes += 1;
       localStorage.setItem("posts", JSON.stringify(state.posts));
     },
+		setEditToggle: (state, action) => {
+			action.payload !== undefined ? state.editToogle = action.payload : state.editToogle = !state.editToogle;
+    },
   },
 });
 
-export const { addPost, editPost, deletePost, addPostLike } = postSlice.actions;
+export const { addPost, editPost, deletePost, addPostLike, setEditToggle } = postSlice.actions;
 
 export default postSlice.reducer;

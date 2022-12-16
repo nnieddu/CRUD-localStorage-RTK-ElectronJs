@@ -51,7 +51,6 @@ const App = () => {
           <User />
         </Container>
       </Navbar>
-      <div className="body">
         <PostForm />
         <div className="content">
           <div>
@@ -60,7 +59,6 @@ const App = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
